@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useTrackedState } from "./reducer";
-const { useEffect, useState } = React;
 
 export const App = () => {
   const state = useTrackedState();
@@ -10,7 +9,7 @@ export const App = () => {
     <div>
       <div>
         <a
-          href="https://github.com/peterDijk/react-typescript-rollup-starter"
+          href="https://github.com/peterDijk/sandbox-tracked-immer-issue"
           target="_blank"
         >
           <img src="images/GitHub-Mark-Light-32px.png" />

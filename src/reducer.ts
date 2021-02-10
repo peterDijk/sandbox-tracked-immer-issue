@@ -31,6 +31,10 @@ export function reducer(state: State, action: Actions): State {
 const useValue = (props: { initialState?: State }): [State, React.Dispatch<Actions>] => {
 	const [state, dispatch] = useReducer(reducer, props.initialState ? props.initialState : { text: 'initial' });
 
+  useEffect(() => {
+    dispatch({ type: 'SET_TEXT_ACTION', payload: { text: 'from useEffect'}})
+  }, [])
+
 	return [state, dispatch];
 };
 
