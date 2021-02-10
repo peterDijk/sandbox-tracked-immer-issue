@@ -1,19 +1,10 @@
 import * as React from "react";
+import { useTrackedState } from "./reducer";
 const { useEffect, useState } = React;
 
-export const sleep = (time: number): Promise<unknown> =>
-  new Promise(resolve => {
-    setTimeout(() => resolve(), time);
-  });
-
 export const App = () => {
-  const [text, setText] = useState("...");
-
-  useEffect(() => {
-    sleep(1000).then(res => {
-      setText("React Typescript w/ Rollup");
-    });
-  }, []);
+  const state = useTrackedState();
+  const { text } = state;
 
   return (
     <div>

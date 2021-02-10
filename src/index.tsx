@@ -5,9 +5,10 @@ import './style/tailwind.css';
 import { App } from "./App";
 
 import * as serviceWorker from './serviceWorker';
+import { TrackedProvider } from "./reducer";
 
 const rootEl = document.getElementById("root");
 
-ReactDOM.render(<App />, rootEl);
+ReactDOM.render(<TrackedProvider><App /></TrackedProvider>, rootEl);
 
 serviceWorker.register();
